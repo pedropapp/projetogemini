@@ -6,7 +6,6 @@ const { join } = require("path");
 dotenv.config(); // Load environment variables from .env file
 const app = express();
 app.use(express.json());
-
 // Access your API key as an environment variable
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 

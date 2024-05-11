@@ -110,8 +110,8 @@ button:active {
     position: absolute;
     z-index: 10000;
     /* Center the popup */
-    top: 35%;
-    left: 35%;
+    top: 30%;
+    left: 30%;
   background: white;
   border-radius: 8px;
   padding: 20px;
@@ -184,8 +184,5 @@ button:active {
     position: absolute;
     bottom: 0;
     right: 0;
-    
-
-
 
 }
