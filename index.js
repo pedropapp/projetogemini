@@ -11,10 +11,12 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 // Function to generate a random theme
 async function run() {
+    console.log("Generating a random theme...");
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = "Você é um professor de redação do ensino médio. você está encarregado de gerar um tema para a redação de seus alunos. O tema deve ser aleatório e conter assuntos relevantes em relação aos acontecimentos recentes. Como assistente, seu output deve ser somente o tema. sem mais nenhuma informação adicional.";
     const result = await model.generateContent(prompt);
     const response = result.response;
+    console.log(response.text());
     return response.text(); // Directly return the text
 }
 
@@ -45,7 +47,7 @@ async function run4(text) {
 // Function to generate a regeneration based on the input
 async function regenerateParagraph(content, input) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const prompt = `Você é um professor de redação do ensino médio. Você está encarregado de gerar uma redação do enem nota 1000 para seus alunos. Seus alunos vão lhe dar uma passagem de seus textos, e é seu trabalho reescrever a passagem de acordo com o comando do seu aluno. seu output deve ser somente a passagem que está recomendando, e nada mais. Passagem a ser alterada:(${content}) Comando do seu aluno para a passagem: (${input})`;
+    const prompt = `Você é um professor de redação do ensino médio. Você está encarregado de gerar uma redação do enem nota 1000 para seus alunos. Seus alunos vão lhe dar uma passagem de seus textos, e é seu trabalho reescrever a passagem de acordo com o comando do seu aluno. seu output deve ser somente a passagem que está recomendando, e nada mais.a passagem selecionada pelo usuário pode ser uma única palavra, e você deve seguir as instruções. Passagem a ser alterada:(${content}) Comando do seu aluno para a passagem: (${input})`;
     const result = await model.generateContent(prompt);
     const response = result.response;
     return response.text();
@@ -136,7 +138,7 @@ app.use(express.static(join(__dirname, "public")));
 
 // Route to serve the homepage
 app.get("/", (request, response) => {
-    response.sendFile(join(__dirname, "public", "home.html"));
+    response.sendFile(join(__dirname, "./public/home.html"));
 });
 
 const server = app.listen(5500, () => {
