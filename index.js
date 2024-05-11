@@ -140,8 +140,8 @@ app.use(express.static(join(__dirname, "public")));
 app.get("/", (request, response) => {
     response.sendFile(join(__dirname, "./public/home.html"));
 });
-
-const server = app.listen(5500, () => {
-    console.log("Server started on port http://127.0.0.1:5500");
+const port = process.env.PORT || 3000;
+const server = app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 });
 
