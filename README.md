@@ -29,7 +29,8 @@ essa parte do projeto também implementa a principal ferramenta do app, a possib
 <br><br/>
 o prompt de regeneração aceita a seleção de palavras, passagens, e paragrafos, e regenera de acordo com o pedido do estudante. alguns pedidos interessantes sao sugeridos na barra de metricas na direita.
 <br><br/>
-<img width="1416" alt="Screenshot 2024-05-11 at 15 32 27" src="https://github.com/pedropapp/projetogemini/assets/105350125/ca150044-a02e-4617-bf0a-75a2ddc74b42">
+<img width="1416" alt="Screenshot 2024-05-11 at 15 32 27" src="https://github.com/pedropapp/projetogemini/assets/105350125/77049e6a-6e73-46dd-abb6-bccffc95271f">
+https://github.com/pedropapp/projetogemini/assets/105350125/657a2f08-fa25-4f2a-bf5f-779cf5a3fa7c
 <br><br/>
 <br><br/>
 abaixo está o resultado se o estudante pedir para alongar o parágrafo.
