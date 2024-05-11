@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente ENEM</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Assistente ENEM</h1>
+    <div class="btn-container">
+        <button id="gerarTema">Gerar Tema</button>
+        <div id="generatedTema"></div>
+    </div>
+
+    <div id= "hide0" style ="display:none;"class="buttons-container ">
+        <button id="escrever" class="buttons">Começar do zero</button>
+        <button id="gerarEstrutura" class="buttons">Começar com ajuda</button>
+    </div>
+    <div id="hide1" style="display: none;">
+        <h3>Estrutura da Redação</h3>
+        <div style="display:none;" class="structure-container " id="structure-container">
+            <div id="structure" class="container">
+                <div id="editor" style="height: 600px;"></div>
+            </div>
+            <div id="metrics-container" style="width: 20%; background-color: #EBEBEB">
+                <div class="loading-spinner" id="spinner-estrutura"></div>
+                <button id="validateButton">Preciso de mais ajuda</button>
+            </div>
+        </div>
+    </div>
+    <div id="hide2" style="display: none;">
+        <h3>Texto Completo</h3>
+        <div style="display:none;" class="fulltext-container" id="fulltext-container">
+
+            <div class="container">
+                <div id="editor2" style="height: 600px;"></div>
+            </div>
+            <div id="metrics-container" style="width: 20%; background-color: #EBEBEB">
+                <h3 style="margin-top: 0px; color: #333333;">Metricas</h3>
+                <button class="btn btn--secondary" id="kwAnalysis" class="btn" onclick="predictscore2()"
+                    style="display: block;">Estimar nota</button>
+                <div class="loading-spinner" id="spinner-score2"></div>
+                <h5>Número de palavras</h5>
+                <div id="totalwordcount2">
+                </div> <!-- Container for displaying keyword densities -->
+                <h5>Nota prevista:</h5>
+                <div id="predictedscore2">
+                </div>
+                <h5>Selecione para regenerar</h5>
+                <div>
+                    <div class="loading-spinner" id="spinner-redacao"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hide3" style="display: none;">
+        <h3>Escreva aqui</h3>
+        <div style="display:none;" class="freehand-container" id="freehand-container">
+
+            <div class="container">
+                <div id="editor3" style="height: 600px;"></div>
+            </div>
+            <div id="metrics-container" style="width: 20%; background-color: #EBEBEB">
+                <h3 style="margin-top: 0px; color: #333333;">Metricas</h3>
+                <button class="btn btn--secondary" id="kwAnalysis" class="btn" onclick="predictscore3()"
+                    style="display: block;">Estimar nota</button>
+                <div class="loading-spinner" id="spinner-score3"></div>
+                <h5>Número de palavras</h5>
+                <div id="totalwordcount3">
+                </div> <!-- Container for displaying keyword densities -->
+                <h5>Score previsto</h5>
+                <div id="predictedscore3">
+                </div>
+                <h5>Selecione para regenerar</h5>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="context-menu"
+        style="position:absolute; display: none; top: 0; z-index:1000; background: rgba(0,0,0,0); padding: 0px;">
+        <button id="regenerate-btn">Regenerar</button>
+        <div class="loading-spinner" id="spinner-regen"></div>
+    </div>
+    <div id="popup-overlay">
+        <div id="popup-menu">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>escreva seu comando de regeneração.</h3>
+                <button id="cancel-btn">&times;</button>
+            </div>
+            <input type="text" id="userInput" placeholder="encurte o paragrafo...">
+            <button id="confirm-btn">Confirmar</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

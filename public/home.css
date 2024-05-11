@@ -1,0 +1,191 @@
+.container {
+  width: 80%;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 20px;
+}
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  color: rgb(25, 19, 19);
+  background-color: #f9ffff;
+}
+
+:root {
+  --clr-bg: #0b0d10;
+  --clr-txt: white;
+  --clr-hig: #161a20;
+  --clr-ter: #f0f0f0;
+}
+
+.buttons {
+  --clr-ter: #008cff;
+  --clr-sec: #e100ff;
+  color: var(--clr-txt);
+  padding: 1em 2em;
+  background-color: var(--clr-hig);
+  border: none;
+  border-radius: 10em;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 2.4rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: box-shadow 200ms;
+}
+.buttons::after {
+  --bor-hei: 0.5rem;
+  --bor-wid: 0.5rem;
+  content: "";
+  position: absolute;
+  height: calc(100% + var(--bor-hei));
+  width: calc(100% + var(--bor-wid));
+  /*   height: 120%; */
+  /*   width: 110%; */
+  border-radius: 20em;
+  background: linear-gradient(to right, var(--clr-ter), var(--clr-sec));
+  z-index: -1;
+}
+.buttons:hover {
+  cursor: pointer;
+  z-index: 0;
+  box-shadow: 3rem 0 5rem var(--clr-ter), -3rem 0 5rem var(--clr-sec);
+}
+
+/* General button styling improvements */
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: rgb(6, 2, 8);
+  color: rgb(144, 121, 178);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: var(--clr-sec);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* General overlay styles */
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none; /* Hidden by default */
+}
+
+#popup-menu {
+    position: absolute;
+    z-index: 10000;
+    /* Center the popup */
+    top: 35%;
+    left: 35%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+
+}
+
+#popup-menu h3 {
+  margin: 0;
+}
+
+#cancel-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#cancel-btn:hover {
+  color: #333;
+}
+
+#userInput {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#confirm-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#confirm-btn:hover {
+  background: #0056b3;
+} /* Basic styling for the spinner */
+.loading-spinner {
+  display: none; /* Initially hidden */
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #9534db;
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#validateButton {
+
+  /*PUT BUTTON IN THE BOTTOM OF THE DIV*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+
+
+
+}
